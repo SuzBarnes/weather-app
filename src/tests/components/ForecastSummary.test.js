@@ -4,7 +4,7 @@ import ForecastSummary from "../../components/ForecastSummary";
 
 describe("ForecastSummary", () => {
   const validProps = {
-    date: "1525046400000",
+    date: 1525046400000,
     description: "Stub description",
     icon: "stubIcon",
     temperature: {
@@ -23,9 +23,20 @@ describe("ForecastSummary", () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+  it("renders correct values for props", () => {
+    const { getByText, getByTestId } = render(
+      <ForecastSummary
+        date={validProps.date}
+        description={validProps.description}
+        icon={validProps.icon}
+        temperature={validProps.temperature}
+      />
+    );
+    expect(getByText(1525046400000)).toHaveClass("forecast-summary__date");
+    expect(getByText("Stub description")).toHaveClass(
+      "forecast-summary__description"
+    );
+    expect(getByTestId("forecast-icon")).toHaveClass("forecast-summary__icon");
+    expect(getByText("22°C")).toHaveClass("forecast-summary__temperature");
+  });
 });
-
-// expect(getByText("1525046400000")).toBeInstanceOf(className="forecast-summary__date")
-// expect(getByText("Clear")).toBeInstanceOf(className="forecast-summary__description")
-// expect(getByText("11")).toBeInstanceOf(className="forecast-summary__temperature")
-// expect(getByTestid(className="forecast-summary__icon"))

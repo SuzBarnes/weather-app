@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function ForecastSummary(props) {
-  const { date, temperature, description, icon } = props;
+function ForecastSummary({ date, description, icon, temperature }) {
   return (
     <div className="forecast-summary">
       <div className="forecast-summary__date">{date}</div>
-      <div className="forecast-summary__icon">{icon}</div>
+      <div className="forecast-summary__icon" data-testid="forecast-icon">
+        {icon}
+      </div>
       <div className="forecast-summary__temperature">
         {temperature.max}
         &deg;C
@@ -17,7 +18,7 @@ function ForecastSummary(props) {
 }
 
 ForecastSummary.propTypes = {
-  date: PropTypes.string.isRequired,
+  date: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   temperature: PropTypes.shape({
