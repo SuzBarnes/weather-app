@@ -39,19 +39,19 @@ describe("ForecastDetails", () => {
       "class",
       "forecast-details__date"
     );
-    expect(getByText("20%")).toHaveAttribute(
+    expect(getByText("Humidity: 20%")).toHaveAttribute(
       "class",
       "forecast-details__humidity"
     );
-    expect(getByText("10mph")).toHaveAttribute(
+    expect(getByText("Wind Speed: 10mph")).toHaveAttribute(
       "class",
       "forecast-details__windspeed"
     );
-    expect(getByText("NE")).toHaveAttribute(
+    expect(getByText("Wind Direction: NE")).toHaveAttribute(
       "class",
       "forecast-details__winddirection"
     );
-    expect(getByText("22°C")).toHaveAttribute(
+    expect(getByText("Highs of 22°C")).toHaveAttribute(
       "class",
       "forecast-details__temperaturemax"
     );
