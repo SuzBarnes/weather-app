@@ -1,20 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function ForecastDetails(props) {
-  const { date, humidity, wind, temperature } = props;
-
+function ForecastDetails({ date, humidity, wind, temperature }) {
+  const formattedDate = new Date(date).toDateString();
+  //   console.log(temperature.min, "<== min temperature");
+  //   console.log(formattedDate);
   return (
     <div className="forecast-details">
-      <div className="forecast-details__date"> {date}</div>
-      <div className="forecast-details__temperature-max">
-        {temperature.max}&deg;C
+      <div className="forecast-details__date"> {formattedDate}</div>
+      <div className="forecast-details__temperaturemax">
+        Temperature:
+        <br />
+        Max: {temperature.max}&deg;C
       </div>
-      <div className="forecast-details__temperature-min">
-        {temperature.min}&deg;C
+      <div
+        className="forecast-details__temperaturemin"
+        data-testid="forecast-mintemperature"
+      >
+        Min: {temperature.min}&deg;C
       </div>
-      <div className="forecast-details__humidity">{humidity}%</div>
-      <div className="forecast-details__wind">{wind}mph</div>
+      <div className="forecast-details__humidity">Humidity: {humidity}%</div>
+      <div className="forecast-details__windspeed">
+        Wind Speed: {wind.speed}mph
+      </div>
+      <div className="forecast-details__winddirection">
+        Wind Direction: {wind.direction}
+      </div>
     </div>
   );
 }
@@ -22,7 +33,10 @@ function ForecastDetails(props) {
 ForecastDetails.propTypes = {
   date: PropTypes.number.isRequired,
   humidity: PropTypes.number.isRequired,
-  wind: PropTypes.number.isRequired,
+  wind: PropTypes.shape({
+    speed: PropTypes.number,
+    direction: PropTypes.string,
+  }).isRequired,
   temperature: PropTypes.shape({
     min: PropTypes.number,
     max: PropTypes.number,

@@ -8,15 +8,16 @@ exports[`ForecastDetails renders correctly 1`] = `
     <div
       class="forecast-details__date"
     >
-       1111111
+       Mon Apr 30 2018
     </div>
     <div
-      class="forecast-details__temperature-max"
+      class="forecast-details__temperaturemax"
     >
       22°C
     </div>
     <div
-      class="forecast-details__temperature-min"
+      class="forecast-details__temperaturemin"
+      data-testid="forecast-mintemperature"
     >
       12°C
     </div>
@@ -26,9 +27,14 @@ exports[`ForecastDetails renders correctly 1`] = `
       20%
     </div>
     <div
-      class="forecast-details__wind"
+      class="forecast-details__windspeed"
     >
       10mph
+    </div>
+    <div
+      class="forecast-details__winddirection"
+    >
+      NE
     </div>
   </div>
 </DocumentFragment>
