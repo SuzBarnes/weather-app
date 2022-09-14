@@ -6,9 +6,9 @@ describe("ForecastSummary", () => {
   const validProps = {
     date: 1525046400000,
     description: "Stub description",
-    icon: "stubIcon",
+    icon: "800",
     temperature: {
-      min: 11,
+      min: 12,
       max: 22,
     },
   };
@@ -32,7 +32,7 @@ describe("ForecastSummary", () => {
         temperature={validProps.temperature}
       />
     );
-    expect(getByText(1525046400000)).toHaveClass("forecast-summary__date");
+    expect(getByText("Mon Apr 30 2018")).toHaveClass("forecast-summary__date");
     expect(getByText("Stub description")).toHaveClass(
       "forecast-summary__description"
     );
