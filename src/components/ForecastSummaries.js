@@ -3,17 +3,23 @@ import PropTypes from "prop-types";
 import ForecastSummary from "./ForecastSummary";
 
 function ForecastSummaries({ forecasts }) {
-  <div className="forecast-summaries">
-    {forecasts.map((forecast) => (
-      <ForecastSummary
-        key={forecast.date}
-        date={forecast.date}
-        description={forecast.description}
-        icon={forecast.icon}
-        temperature={forecast.temperature}
-      />
-    ))}
-  </div>;
+  return (
+    <div className="forecast-summaries">
+      {forecasts.map((forecast) => {
+        const { date, description, icon, temperature } = forecast;
+        // console.log(forecast);
+        return (
+          <ForecastSummary
+            key={date}
+            date={date}
+            description={description}
+            icon={icon}
+            temperature={temperature}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
 ForecastSummaries.propTypes = {

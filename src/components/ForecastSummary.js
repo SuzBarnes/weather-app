@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function ForecastSummary({ date, description, icon, temperature }) {
   return (
-    <div className="forecast-summary">
+    <div className="forecast-summary" data-testid="forecast-summary">
       <div className="forecast-summary__date">{date}</div>
       <div className="forecast-summary__icon" data-testid="forecast-icon">
         {icon}
