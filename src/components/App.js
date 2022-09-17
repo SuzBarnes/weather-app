@@ -7,7 +7,7 @@ import ForecastDetails from "./ForecastDetails";
 
 function App({ location, forecasts }) {
   const { city, country } = location;
-  const { date, humidity, wind, temperature } = forecasts[0];
+  // const { date, humidity, wind, temperature } = forecasts[0];
   const [selectedDate, setSelectedDate] = useState(forecasts[0].date);
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
@@ -22,13 +22,7 @@ function App({ location, forecasts }) {
         forecasts={forecasts}
         onForecastSelect={handleForecastSelect}
       />
-      <ForecastDetails
-        forecast={selectedForecast}
-        date={date}
-        humidity={humidity}
-        wind={wind}
-        temperature={temperature}
-      />
+      <ForecastDetails forecast={selectedForecast} />
     </div>
   );
 }
@@ -53,17 +47,5 @@ App.propTypes = {
     city: PropTypes.string,
     country: PropTypes.string,
   }).isRequired,
-  // forecast: PropTypes.shape({
-  //   date: PropTypes.number,
-  //   humidity: PropTypes.number,
-  //   wind: PropTypes.shape({
-  //     speed: PropTypes.number,
-  //     direction: PropTypes.string,
-  //   }),
-  //   temperature: PropTypes.shape({
-  //     min: PropTypes.number,
-  //     max: PropTypes.number,
-  //   }),
-  // }).isRequired,
 };
 export default App;
