@@ -11,6 +11,7 @@ describe("ForecastSummary", () => {
       min: 12,
       max: 22,
     },
+    onSelect: () => { },
   };
   it("renders correctly", () => {
     const { asFragment } = render(
@@ -19,6 +20,7 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
     expect(asFragment()).toMatchSnapshot();
@@ -30,6 +32,7 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
     expect(getByText("Mon Apr 30 2018")).toHaveClass("forecast-summary__date");
