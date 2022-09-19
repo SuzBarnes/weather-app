@@ -22,7 +22,7 @@ function App() {
     setSelectedDate(date);
   };
   const handleCitySearch = () => {
-    getForecast(setSelectedDate, setForecasts, setLocation);
+    getForecast(setSelectedDate, setForecasts, setLocation, searchText);
   };
 
   return (
