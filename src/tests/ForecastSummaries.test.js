@@ -24,7 +24,7 @@ describe("ForecastSummaries", () => {
         },
       },
     ],
-    onForecastSelect: () => { },
+    onForecastSelect: () => {},
   };
 
   it("renders correctly", () => {
