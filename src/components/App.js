@@ -44,12 +44,14 @@ function App() {
         setSearchText={setSearchText}
         onSubmit={handleCitySearch}
       />
+      <br />
       {!errorMessage && (
         <>
           <ForecastSummaries
             forecasts={forecasts}
             onForecastSelect={handleForecastSelect}
           />
+          <br />
           {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
         </>
       )}

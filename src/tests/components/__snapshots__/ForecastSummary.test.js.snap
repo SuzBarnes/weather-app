@@ -12,15 +12,6 @@ exports[`ForecastSummary renders correctly 1`] = `
       Mon Apr 30 2018
     </div>
     <div
-      class="forecast-summary__icon"
-      data-testid="forecast-icon"
-    >
-      <i
-        class="wi wi-day-sunny"
-        name="owm"
-      />
-    </div>
-    <div
       class="forecast-summary__temperature"
     >
       22°C
@@ -29,6 +20,15 @@ exports[`ForecastSummary renders correctly 1`] = `
       class="forecast-summary__description"
     >
       Stub description
+    </div>
+    <div
+      class="forecast-summary__icon"
+      data-testid="forecast-icon"
+    >
+      <i
+        class="wi wi-day-sunny"
+        name="owm"
+      />
     </div>
     <button
       type="button"
