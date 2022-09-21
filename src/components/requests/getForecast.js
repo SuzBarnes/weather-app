@@ -1,4 +1,4 @@
-/* eslint-disable-next-line no-console */
+/* eslint-disable no-console */
 import axios from "axios";
 
 const getForecast = (

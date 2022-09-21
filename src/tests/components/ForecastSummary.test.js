@@ -13,6 +13,7 @@ describe("ForecastSummary", () => {
     },
     onSelect: () => {},
   };
+
   it("renders correctly", () => {
     const { asFragment } = render(
       <ForecastSummary
@@ -23,8 +24,10 @@ describe("ForecastSummary", () => {
         onSelect={validProps.onSelect}
       />
     );
+
     expect(asFragment()).toMatchSnapshot();
   });
+
   it("renders correct values for props", () => {
     const { getByText, getByTestId } = render(
       <ForecastSummary
@@ -35,11 +38,15 @@ describe("ForecastSummary", () => {
         onSelect={validProps.onSelect}
       />
     );
+
     expect(getByText("Mon Apr 30 2018")).toHaveClass("forecast-summary__date");
+
     expect(getByText("Stub description")).toHaveClass(
       "forecast-summary__description"
     );
+
     expect(getByTestId("forecast-icon")).toHaveClass("forecast-summary__icon");
+
     expect(getByText("22°C")).toHaveClass("forecast-summary__temperature");
   });
 });

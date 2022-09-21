@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React from "react";
 import App from "../../components/App";
-import forecast from "../../data/forecast.json";
+import forecast from "../../components/ForecastSummaries";
 
 describe("App", () => {
   it("renders correctly", () => {
@@ -9,9 +9,10 @@ describe("App", () => {
       <App
         location={forecast.location}
         forecasts={forecast.forecasts}
-        forecast={forecast.forecasts[0]}
+        forecast={forecast[0]}
       />
     );
+
     expect(asFragment()).toMatchSnapshot();
   });
 });

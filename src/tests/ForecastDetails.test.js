@@ -15,36 +15,44 @@ describe("ForecastDetails", () => {
       max: 22,
     },
   };
+
   it("renders correctly", () => {
     const { asFragment } = render(<ForecastDetails forecast={validProps} />);
+
     expect(asFragment()).toMatchSnapshot();
   });
   it("renders correct values for props", () => {
     const { getByText, getByTestId } = render(
       <ForecastDetails forecast={validProps} />
     );
+
     expect(getByText("Mon Apr 30 2018")).toHaveAttribute(
       "class",
       "forecast-details__date"
     );
+
     expect(getByText("Humidity: 20%,")).toHaveAttribute(
       "class",
       "forecast-details__humidity"
     );
+
     expect(getByText("Wind Speed: 10mph,")).toHaveAttribute(
       "class",
-      "forecast-details__windspeed"
+      "forecast-details__wind-speed"
     );
+
     expect(getByText("Wind Direction: NE")).toHaveAttribute(
       "class",
-      "forecast-details__winddirection"
+      "forecast-details__wind-direction"
     );
+
     expect(getByText("Highs of 22°C,")).toHaveAttribute(
       "class",
-      "forecast-details__temperaturemax"
+      "forecast-details__temperature-max"
     );
-    expect(getByTestId("forecast-mintemperature")).toHaveClass(
-      "forecast-details__temperaturemin"
+
+    expect(getByTestId("forecast-min-temperature")).toHaveClass(
+      "forecast-details__temperature-min"
     );
   });
 });

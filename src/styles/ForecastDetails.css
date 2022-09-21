@@ -1,10 +1,8 @@
 .forecast-details {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   background-color: rgb(255, 226, 64);
   border-radius: 10px;
-  width: auto;
-  height: auto;
   align-items: center;
 }
 

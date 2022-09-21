@@ -1,13 +1,8 @@
-body {
-  font-size: 18px;
-  text-align: center;
-}
-
 .forecast-summary {
   background-color: rgb(255, 226, 64);
-  width: auto;
-  height: auto;
   border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
 }
 
 .forecast-summary__date {
@@ -19,11 +14,11 @@ body {
   font-size: 35px;
 }
 
-button {
+.forecastSummaryButton {
   border: none;
 }
 
-button:hover {
+.forecastSummaryButton:hover {
   background: rgb(173, 172, 172);
   font-weight: bold;
 }

@@ -34,6 +34,7 @@ describe("ForecastSummaries", () => {
         onForecastSelect={validProps.onForecastSelect}
       />
     );
+
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -44,6 +45,7 @@ describe("ForecastSummaries", () => {
         onForecastSelect={validProps.onForecastSelect}
       />
     );
+
     expect(getAllByTestId("forecast-summary")).toHaveLength(2);
   });
 });

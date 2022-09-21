@@ -16,7 +16,11 @@ function ForecastSummary({ date, description, icon, temperature, onSelect }) {
       <div className="forecast-summary__icon" data-testid="forecast-icon">
         <WeatherIcon name="owm" iconId={icon} />
       </div>
-      <button type="button" onClick={() => onSelect(date)}>
+      <button
+        type="button"
+        className="forecastSummaryButton"
+        onClick={() => onSelect(date)}
+      >
         More Details...
       </button>
     </div>
