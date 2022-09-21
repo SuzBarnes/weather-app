@@ -7,11 +7,13 @@ import LocationDetails from "../components/LocationDetails";
 describe("Search Form", () => {
   it("renders search button correctly", () => {
     const validProps = {
+      searchText: {},
       setSearchText: () => { },
       onSubmit: () => { },
     };
     const { getByText } = render(
       <SearchForm
+        searchText=""
         setSearchText={validProps.setSearchText}
         onSubmit={validProps.onSubmit}
       />
