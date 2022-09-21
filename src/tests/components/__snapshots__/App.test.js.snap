@@ -18,6 +18,7 @@ exports[`App renders correctly 1`] = `
         value=""
       />
       <button
+        id="searchformbutton"
         type="submit"
       >
         Search

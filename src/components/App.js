@@ -23,6 +23,7 @@ function App() {
     setSelectedDate(date);
   };
   const handleCitySearch = () => {
+    setErrorMessage("");
     getForecast(
       setSelectedDate,
       setForecasts,

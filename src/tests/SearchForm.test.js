@@ -1,72 +1,40 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { fireEvent, getByLabelText, render, screen } from "@testing-library/react";
+import App from "../components/App";
 import SearchForm from "../components/SearchForm";
+import LocationDetails from "../components/LocationDetails";
 
 describe("Search Form", () => {
-  const validProps = {
-    forecasts: [
-      {
-        date: 1111111,
-        description: "Stub description 1",
-        icon: 800,
-        temperature: {
-          max: 22,
-          min: 12,
-        },
-      },
-      {
-        date: 2222222,
-        description: "Stub description 2",
-        icon: 602,
-        temperature: {
-          max: 24,
-          min: 13,
-        },
-      },
-    ],
-    onSubmit: () => {},
-  };
-  const newValidProps = {
-    forecasts: [
-      {
-        date: 3333333,
-        description: "Stub description 3",
-        icon: 800,
-        temperature: {
-          max: 21,
-          min: 10,
-        },
-      },
-      {
-        date: 4444444,
-        description: "Stub description 4",
-        icon: 602,
-        temperature: {
-          max: 26,
-          min: 18,
-        },
-      },
-    ],
-    onSubmit: () => {},
-  };
-  it("renders correctly", () => {
-    const { asFragment } = render(
+  it("renders search button correctly", () => {
+    const validProps = {
+      setSearchText: () => { },
+      onSubmit: () => { },
+    };
+    const { getByText } = render(
       <SearchForm
-        searchText={validProps.searchText}
         setSearchText={validProps.setSearchText}
-        onSubmit={validProps.handleCitySearch}
+        onSubmit={validProps.onSubmit}
       />
     );
-    expect(asFragment()).toMatchSnapshot();
+    const button = screen.getAllByRole("button");
+    expect(button).toHaveLength(1);
+    expect(getByText(/search/i)).toBeInstanceOf(HTMLButtonElement);
   });
-  it("renders the correct text when searching", () => {
-    const { asFragment } = render(
-      <SearchForm
-        searchText={newValidProps.searchText}
-        setSearchText={newValidProps.setSearchText}
-        onSubmit={newValidProps.handleCitySearch}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+
+  //   it("click handler is called", () => {
+  //     const validProps = {
+  //       searchText: {},
+  //     };
+  //     const { getByText } = render(
+  //       <>
+  //         <App />
+  //         <LocationDetails city="Manchester" country="GB" />
+  //         <SearchForm searchText={validProps.searchText} />
+  //       </>
+  //     );
+  //     const locationManchester = screen.getByRole("textbox", "Manchester");
+  //     fireEvent.change(locationManchester, { target: { value: "LONDON" } });
+  //     fireEvent.click(getByText(/search/i));
+  //     expect(LocationDetails.city).toBe("London");
+  //   });
 });
