@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import SearchForm from "../components/SearchForm";
+import SearchForm from "../../components/SearchForm";
 
 const validProps = {
   searchText: "some Search Text",
