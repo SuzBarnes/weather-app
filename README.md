@@ -39,7 +39,7 @@ The app will tell you:
 - Created by bootstrapping the Create React App (https://github.com/facebook/create-react-app).
 - Uses JavaScript, JSX, CSS.
 ----------------
-## Further time
+### Further time
 If I had further time I would have loved to:
 - add the relevant city image to the background when searched to make it more interactive, 
 - add day mode and night mode,
