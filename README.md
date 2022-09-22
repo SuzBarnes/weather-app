@@ -16,14 +16,14 @@ The app will tell you:
 1. Run `gh repo clone SuzBarnes/weather-app` into the console.
 2. `cd` into the new directory
 3. Run `npm install`
-------------------------
+----------------
 ### Useful Commands:
 |How to...| Command  | Further Details|
 |---------|----------|----------------|
 |Start the app|`npm start`|it will load on localhost:3000|
 |Test| `npm test`| the tests will take place and any errors will be displayed in your console|
 |Format| `npx prettier --write .`| Prettier is the ESLint tool used to help with formatting of the App
---------------------------
+----------------
 ### How to use:
 1. Use the search bar to enter a location in Great Britian
 ![alt text](./public/typing.png)
@@ -34,11 +34,11 @@ The app will tell you:
 ![alt text](./public/searched.png)
 5. If the location isn't found, check your spelling/make sure the city is in Great Britian and search again.
 ![alt text](./public/error.png)
----------------------------
+----------------
 ### Technologies
 - Created by bootstrapping the Create React App (https://github.com/facebook/create-react-app).
 - Uses JavaScript, JSX, CSS.
-------------------------
+----------------
 ## Further time
 If I had further time I would have loved to:
 - add the relevant city image to the background when searched to make it more interactive, 
