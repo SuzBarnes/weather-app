@@ -13,7 +13,7 @@ The app will tell you:
 ![alt text](./public/weather-app.png)
 ----------------
  ### Installation Instructions
-1. Run `gh repo clone SuzBarnes/weather-app` into the console.
+1. Run `git clone https://github.com/SuzBarnes/weather-app.git` into the console.
 2. `cd` into the new directory
 3. Run `npm install`
 ----------------
